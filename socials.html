@@ -1,19 +1,85 @@
-<!doctype html><html lang="en"><head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Socials — Anthony Joson</title><link rel="stylesheet" href="/style.css"/></head><body>
-<header class="site-header"><div class="container">
-    <a class="brand" href="/"><img class="logo" src="/assets/logo.svg" alt="Logo"><span class="title">Anthony Joson</span></a>
-    <nav class="nav"><a class="" href="/index.html">Home</a><a class="" href="/research.html">Research</a><a class="" href="/cv.html">CV</a><a class="" href="/skills.html">Skills</a><a class="active" href="/socials.html">Socials</a></nav></div></header>
-<main class="container">
-  <section class="panel">
-    <h1>Find me online</h1>
-    <p class="small">Professional first, but here are a couple of places I share work and life.</p>
-    <div class="socials">
-      <a class="btn" href="https://instagram.com/Antwongy" target="_blank" rel="noopener"><img class="icon" src="/assets/instagram.svg" alt=""> Instagram</a>
-      <a class="btn" href="https://youtube.com/@Antwongy" target="_blank" rel="noopener"><img class="icon" src="/assets/youtube.svg" alt=""> YouTube</a>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Socials — Anthony Joson</title>
+  <link rel="icon" href="/assets/logo.svg">
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    .socials-page .card{
+      background: var(--panel);
+      border:1px solid var(--border);
+      border-radius:1rem;
+      padding:2rem;
+      text-align:center;
+      max-width:500px;
+      margin:2rem auto;
+    }
+    .social-buttons{
+      display:flex;
+      flex-direction:column;
+      gap:1rem;
+      margin-top:1.2rem;
+    }
+    .social-buttons a{
+      display:flex; align-items:center; justify-content:center;
+      gap:.6rem;
+      text-decoration:none;
+      font-weight:600;
+      background: linear-gradient(90deg, var(--brand), var(--brand-2));
+      color:white;
+      padding:.8rem 1rem;
+      border-radius:.8rem;
+      transition:opacity .2s ease;
+    }
+    .social-buttons a:hover{ opacity:.9; }
+    .social-buttons img{
+      width:22px; height:22px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/">
+        <img class="logo" src="/assets/logo.svg" alt="Logo" width="32" height="32">
+        <span class="title">Anthony Joson</span>
+      </a>
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/research.html">Research</a>
+        <a href="/cv.html">CV</a>
+        <a href="/skills.html">Skills</a>
+        <a class="active" href="/socials.html">Socials</a>
+      </nav>
     </div>
-    <p class="small">Replace <code>USERNAME</code> in the links above with your handles.</p>
-  </section>
-</main>
-<footer class="footer"><div class="container">© <span id="year"></span> Anthony Joson • Built on GitHub Pages</div></footer><script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-</body></html>
+  </header>
+
+  <main class="container socials-page">
+    <div class="card">
+      <h1>Connect with me</h1>
+      <p class="small">I share professional work, research updates, and creative projects online.</p>
+      <div class="social-buttons">
+        <a href="https://www.linkedin.com/in/anthony-joson-69574b235" target="_blank" rel="noopener">
+          <img src="/assets/icons/linkedin.svg" alt="LinkedIn"> LinkedIn
+        </a>
+        <a href="https://instagram.com/Antwongy" target="_blank" rel="noopener">
+          <img src="/assets/icons/instagram.svg" alt="Instagram"> Instagram
+        </a>
+        <a href="https://youtube.com/@Antwongy" target="_blank" rel="noopener">
+          <img src="/assets/icons/youtube.svg" alt="YouTube"> YouTube
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© <span id="year"></span> Anthony Joson • Built on GitHub Pages</div>
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
