@@ -1,24 +1,94 @@
-<!doctype html><html lang="en"><head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CV — Anthony Joson</title><link rel="stylesheet" href="/style.css"/></head><body>
-<header class="site-header"><div class="container">
-    <a class="brand" href="/"><img class="logo" src="/assets/logo.svg" alt="Logo"><span class="title">Anthony Joson</span></a>
-    <nav class="nav"><a class="" href="/index.html">Home</a><a class="" href="/research.html">Research</a><a class="active" href="/cv.html">CV</a><a class="" href="/skills.html">Skills</a><a class="" href="/socials.html">Socials</a></nav></div></header>
-<main class="container">
-  <section class="panel">
-    <h1>Curriculum Vitae</h1>
-    <p class="small">Download as PDF by printing this page (Ctrl/Cmd+P) — styles are print‑friendly.</p>
-    <table class="table">
-      <thead><tr><th style="width:30%">Section</th><th>Details</th></tr></thead>
-      <tbody>
-        <tr><th>Education</th><td><strong>Temple University</strong> — B.S. (expected 2026). Focus: Bioinformatics, Molecular Biology.</td></tr>
-        <tr><th>Research Experience</th><td><strong>Comparative Genomics Researcher</strong> — Perez Lab<br/>Drosophila RNA‑seq integration, EVE modeling, HyPhy selection analyses; CRISPR HDR tool development.</td></tr>
-        <tr><th>Publications & Talks</th><td>List peer‑reviewed papers, preprints, posters, and talks here (with links).</td></tr>
-        <tr><th>Technical</th><td>Python (pandas, Biopython), R (tidyverse, DESeq2), Bash, Git, Flask, HyPhy, UCSC utilities, Docker.</td></tr>
-        <tr><th>Awards</th><td>Dean’s List; research scholarships; conference travel awards.</td></tr>
-      </tbody>
-    </table>
-  </section>
-</main>
-<footer class="footer"><div class="container">© <span id="year"></span> Anthony Joson • Built on GitHub Pages</div></footer><script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-</body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CV — Anthony Joson</title>
+  <link rel="icon" href="/assets/logo.svg">
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    .cv section{
+      background: var(--panel);
+      border:1px solid var(--border);
+      border-radius:1rem;
+      padding:1.5rem;
+      margin-bottom:1.5rem;
+    }
+    .cv h2{ margin-top:0; margin-bottom:.75rem; }
+    .cv h3{ margin:.5rem 0 .25rem; }
+    .cv p, .cv li{ margin:.25rem 0; }
+    .cv ul{ padding-left:1.25rem; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/">
+        <img class="logo" src="/assets/logo.svg" alt="Logo" width="32" height="32">
+        <span class="title">Anthony Joson</span>
+      </a>
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/research.html">Research</a>
+        <a class="active" href="/cv.html">CV</a>
+        <a href="/skills.html">Skills</a>
+        <a href="/socials.html">Socials</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container cv">
+    <section>
+      <h2>Education</h2>
+      <p><strong>M.S., Biology</strong>, Temple University, Philadelphia, PA — 2025–Present</p>
+      <p><strong>B.S., Biochemistry</strong>, Temple University, Philadelphia, PA — 2025</p>
+    </section>
+
+    <section>
+      <h2>Research Experience</h2>
+      <p><strong>Graduate Research Assistant</strong>, Kulathinal Lab, Temple University — Present<br>
+      Evolutionary Genomics of Male- and Female-Biased Networks in <em>Drosophila</em></p>
+
+      <p><strong>Undergraduate Research Developer</strong>, Kulathinal Lab, Temple University — Fall 2025<br>
+      The Genomic Beat: Translating genomic alignments into music</p>
+
+      <p><strong>Undergraduate Research Software Developer</strong>, Perez Lab, Temple University School of Pharmacy, Moulder Drug Discovery Center — Fall 2025<br>
+      One HDR Ready: Standalone and Web-Based CRISPR Tool Development</p>
+
+      <p><strong>Undergraduate Quantitative Research Analyst</strong>, Fleming Lab, Temple University — Fall 2025<br>
+      Analysis of Student Use of Interactive Organic Reaction Animations</p>
+    </section>
+
+    <section>
+      <h2>Presentations</h2>
+      <ul>
+        <li>Joson, A.J., Butchetsky, R., Elyounoussi, M., et al. “Quantitative Analysis for Use of Interactive Organic Reaction Animations.” ACS National Conference, Spring 2025</li>
+        <li>Joson, A.J., Kobayashi, S., Kulathinal, R. “Genomic Beat: Translating Genomic Alignments into Music.” Temple University Symposium for Research and Creativity, Spring 2025</li>
+        <li>Joson, A.J., Butchetsky, R., Meyers, L., et al. “Analysis of Student Use of Interactive Organic Reaction Animations.” Temple University Symposium for Research and Creativity, Spring 2024</li>
+        <li>Joson, A.J., Kulathinal, R. “Genomic Beat.” Ewha Womans University, Seoul, South Korea, Fall 2023</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Work Experience</h2>
+      <p><strong>Pharmacy Technician</strong>, CVS Pharmacy, Philadelphia, PA — 2024–2025</p>
+      <p><strong>Stand Builder</strong>, TNT Fireworks, Sacramento, CA (Regional) — Summer 2023</p>
+    </section>
+
+    <section>
+      <h2>Leadership & Committees</h2>
+      <p><strong>Event Coordinator</strong>, Temple University Chemical Society — 2024–2025</p>
+      <p><strong>Committee Member</strong>, Study Abroad Student Advisory Committee — 2024–2025</p>
+      <p><strong>Public Relations Intern</strong>, Vietnamese Student Association (VSA) — 2022–2023</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© <span id="year"></span> Anthony Joson • Built on GitHub Pages</div>
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
