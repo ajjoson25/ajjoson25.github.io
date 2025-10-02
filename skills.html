@@ -1,38 +1,94 @@
-<!doctype html><html lang="en"><head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Skills — Anthony Joson</title><link rel="stylesheet" href="/style.css"/></head><body>
-<header class="site-header"><div class="container">
-    <a class="brand" href="/"><img class="logo" src="/assets/logo.svg" alt="Logo"><span class="title">Anthony Joson</span></a>
-    <nav class="nav"><a class="" href="/index.html">Home</a><a class="" href="/research.html">Research</a><a class="" href="/cv.html">CV</a><a class="active" href="/skills.html">Skills</a><a class="" href="/socials.html">Socials</a></nav></div></header>
-<main class="container">
-  <section class="grid cols-3">
-    <div class="panel">
-      <h2>Bioinformatics</h2>
-      <ul class="list">
-        <li>HyPhy (aBSREL/BUSTED), EVE model</li>
-        <li>MAF/FASTA/VCF processing, UCSC tools</li>
-        <li>CRISPR HDR design (custom pipelines)</li>
-        <li>RNA‑seq integration, PCA/UMAP/GLM</li>
-      </ul>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Skills — Anthony Joson</title>
+  <link rel="icon" href="/assets/logo.svg">
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    .skills .card{
+      background: var(--panel);
+      border:1px solid var(--border);
+      border-radius:1rem;
+      padding:1.25rem 1.5rem;
+    }
+    .skills h2{
+      margin-top:0;
+      display:flex; align-items:center; gap:.5rem;
+      font-size:1.25rem;
+    }
+    .skills h2 img.icon{ width:22px; height:22px; }
+    .skills ul{ padding-left:1.25rem; margin:.5rem 0; }
+    .skills li{ margin:.25rem 0; display:flex; align-items:center; gap:.4rem; }
+    .skills li img{ width:18px; height:18px; }
+    .cards{ display:grid; gap:1rem; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/">
+        <img class="logo" src="/assets/logo.svg" alt="Logo" width="32" height="32">
+        <span class="title">Anthony Joson</span>
+      </a>
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/research.html">Research</a>
+        <a href="/cv.html">CV</a>
+        <a class="active" href="/skills.html">Skills</a>
+        <a href="/socials.html">Socials</a>
+      </nav>
     </div>
-    <div class="panel">
-      <h2>Software</h2>
-      <ul class="list">
-        <li>Python (pandas, Biopython), R (tidyverse, DESeq2)</li>
-        <li>Flask, Jinja, basic JS/HTML/CSS</li>
-        <li>Docker, Conda, HPC scheduling</li>
-        <li>Git/GitHub, GitHub Pages</li>
-      </ul>
-    </div>
-    <div class="panel">
-      <h2>Communication</h2>
-      <ul class="list">
-        <li>Data storytelling & visualization</li>
-        <li>Technical writing & documentation</li>
-        <li>UGC content for science & brands</li>
-      </ul>
-    </div>
-  </section>
-</main>
-<footer class="footer"><div class="container">© <span id="year"></span> Anthony Joson • Built on GitHub Pages</div></footer><script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-</body></html>
+  </header>
+
+  <main class="container skills">
+    <section class="cards">
+      <div class="card">
+        <h2><img class="icon" src="/assets/icons/code.svg" alt="">Programming</h2>
+        <ul>
+          <li><img src="/assets/icons/r.svg" alt="">R (tidyverse, DESeq2)</li>
+          <li><img src="/assets/icons/python.svg" alt="">Python (pandas, Biopython)</li>
+          <li><img src="/assets/icons/terminal.svg" alt="">Bash / Shell scripting</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2><img class="icon" src="/assets/icons/tools.svg" alt="">Software & Libraries</h2>
+        <ul>
+          <li><img src="/assets/icons/premiere.svg" alt="">Adobe Premiere Pro</li>
+          <li><img src="/assets/icons/lightroom.svg" alt="">Adobe Lightroom</li>
+          <li><img src="/assets/icons/server.svg" alt="">High Performance Computing (HPC)</li>
+          <li><img src="/assets/icons/dna.svg" alt="">HyPhy (evolutionary analysis)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2><img class="icon" src="/assets/icons/flask.svg" alt="">Wet Lab Skills</h2>
+        <ul>
+          <li><img src="/assets/icons/cell.svg" alt="">Manage cell plates</li>
+          <li><img src="/assets/icons/pcr.svg" alt="">Run PCR</li>
+          <li><img src="/assets/icons/dna.svg" alt="">DNA extraction</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2><img class="icon" src="/assets/icons/star.svg" alt="">Other Skills</h2>
+        <ul>
+          <li><img src="/assets/icons/computer.svg" alt="">Computer building & troubleshooting</li>
+          <li><img src="/assets/icons/camera.svg" alt="">Photography</li>
+          <li><img src="/assets/icons/chef.svg" alt="">Cooking</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© <span id="year"></span> Anthony Joson • Built on GitHub Pages</div>
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
