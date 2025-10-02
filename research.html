@@ -1,23 +1,80 @@
-<!doctype html><html lang="en"><head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Research Statement — Anthony Joson</title><link rel="stylesheet" href="/style.css"/></head><body>
-<header class="site-header"><div class="container">
-    <a class="brand" href="/"><img class="logo" src="/assets/logo.svg" alt="Logo"><span class="title">Anthony Joson</span></a>
-    <nav class="nav"><a class="" href="/index.html">Home</a><a class="active" href="/research.html">Research</a><a class="" href="/cv.html">CV</a><a class="" href="/skills.html">Skills</a><a class="" href="/socials.html">Socials</a></nav></div></header>
-<main class="container">
-  <article class="panel">
-    <span class="kicker">Research Statement</span>
-    <h1>Toward a clearer picture of regulatory and sequence drivers of evolution</h1>
-    <p>My work compares sex‑bias, tissue specificity, and expression levels across eight <em>Drosophila</em> genomes to understand how regulatory programs shape molecular evolution. I integrate comparative RNA‑seq, codon usage (CAI), and genomic context to model drivers of dN/dS variation, using GLMs and phylogenetic models (EVE; HyPhy aBSREL/BUSTED).</p>
-    <p>Ongoing directions include scaling species‑specific codon reference sets, adding robust uncertainty estimates for tau thresholds, and formalizing cross‑species generalization via hierarchical EVE fits. Ultimately, I aim to connect gene regulation to evolutionary outcomes in a way that supports practical design—like CRISPR HDR arm selection grounded in conserved structure.</p>
-    <hr class="hr"/>
-    <h2>Recent highlights</h2>
-    <ul class="list">
-      <li>GLMs across ~10k orthologs suggest sex‑bias and tissue specificity are significant predictors of rate.</li>
-      <li>Head‑expressed genes show CDS length as an additional contributor.</li>
-      <li>PCA/UMAP show strong clustering by tissue across species, validating data quality.</li>
-    </ul>
-  </article>
-</main>
-<footer class="footer"><div class="container">© <span id="year"></span> Anthony Joson • Built on GitHub Pages</div></footer><script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-</body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Research Statement — Anthony Joson</title>
+  <link rel="icon" href="/assets/logo.svg">
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    .research article{
+      background: var(--panel);
+      border:1px solid var(--border);
+      border-radius:1rem;
+      padding:1.5rem;
+      max-width:70ch;
+      margin:0 auto;
+    }
+    .research h1{ font-size:clamp(1.8rem,1.4rem+2vw,2.4rem); margin-bottom:.8rem; }
+    .research p{ margin:.9rem 0; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/">
+        <img class="logo" src="/assets/logo.svg" alt="Logo" width="32" height="32">
+        <span class="title">Anthony Joson</span>
+      </a>
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a class="active" href="/research.html">Research</a>
+        <a href="/cv.html">CV</a>
+        <a href="/skills.html">Skills</a>
+        <a href="/socials.html">Socials</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container research">
+    <article>
+      <h1>Research Statement</h1>
+      <p>
+        Proteins evolve at different rates, but the reasons why remain unclear. A common measure of
+        evolutionary change is the number of amino acid–altering substitutions (dN), which reflects how
+        selection shapes gene function. Many factors—such as sex-biased expression, tissue specificity, and
+        gene expression levels—have been suggested as drivers of protein divergence, yet their relative
+        importance is not well understood.
+      </p>
+      <p>
+        My research uses comparative genomics across eight <em>Drosophila</em> species to investigate these
+        drivers. By integrating RNA-seq data with features such as codon usage, gene length, chromosomal
+        location, protein–protein interaction, and GC content, I aim to build a comprehensive picture of how
+        both regulatory and sequence-based features shape molecular evolution.
+      </p>
+      <p>
+        To approach this question, I calculate sex bias, tissue specificity (τ), and expression levels from
+        RNA-seq data across tissues and species, while also incorporating sequence features like codon
+        adaptation index (CAI), GC content, and protein interaction connectivity. Using generalized linear
+        models (GLMs), I test how these factors predict amino acid substitution rates (dN). I also apply
+        codon-based phylogenetic models in HyPhy to detect adaptive diversification, and the Expression
+        Variance and Evolution (EVE) model to assess how expression divergence compares to within-species
+        diversity.
+      </p>
+      <p>
+        By combining expression-based and sequence-based features, my work aims to disentangle the forces
+        shaping protein divergence. This integrative approach will provide new insight into how gene
+        regulation and selective pressures interact to generate molecular diversity across species.
+      </p>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© <span id="year"></span> Anthony Joson • Built on GitHub Pages</div>
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
