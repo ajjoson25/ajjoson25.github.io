@@ -236,3 +236,72 @@ h3 { font-size: 1.1rem; }
   color:var(--muted);
   text-align:center;
 }
+
+/* --- Brand link: no purple, no underline, tighter spacing --- */
+a.brand,
+a.brand:link,
+a.brand:visited,
+a.brand:hover,
+a.brand:active {
+  color: var(--text);
+  text-decoration: none;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;             /* controls space between logo & name */
+  white-space: nowrap;    /* keeps name on one line */
+}
+.brand .title {
+  display: inline-block;
+  font-weight: 600;
+  line-height: 1;         /* removes extra vertical wiggle */
+  margin-top: 1px;        /* tiny optical align */
+}
+.logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: block;
+}
+
+/* --- Spread nav across the header --- */
+.site-header .container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.brand { margin-right: auto; }         /* pins brand left */
+.nav {
+  flex: 1 1 auto;                      /* let nav take remaining width */
+  display: flex;
+  justify-content: space-evenly;       /* evenly spaced links across */
+  gap: 0;                              /* no extra gaps, spacing handled by even distribution */
+}
+.nav a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: .5rem .75rem;
+  border-radius: .7rem;
+  border: 1px solid transparent;
+  /* Make each link easier to hit while still looking sleek */
+  min-width: 80px;
+  text-align: center;
+}
+.nav a:hover {
+  color: var(--text);
+  border-color: var(--border);
+  background: rgba(255,255,255,.05);
+}
+.nav a.active {
+  color: var(--text);
+  background: linear-gradient(90deg, rgba(139,92,246,.12), rgba(34,211,238,.12));
+  border-color: var(--border);
+}
+
+/* Responsive tweak: on smaller screens, keep a nice spread */
+@media (max-width: 820px) {
+  .nav { justify-content: space-between; }
+  .nav a { min-width: auto; padding: .5rem .6rem; }
+}
+
