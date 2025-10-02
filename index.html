@@ -12,7 +12,7 @@
   <meta property="og:description" content="Comparative genomics, CRISPR tooling, and data-driven biology.">
   <meta property="og:type" content="website">
   <style>
-    /* minimal overrides to get the sleek, simple portfolio vibe */
+    /* minimal overrides for clean portfolio vibe + gallery */
     :root{
       --bg-1:#0f1226; --bg-2:#181a3a;
       --brand:#8b5cf6; --brand-2:#22d3ee;
@@ -25,10 +25,7 @@
                   linear-gradient(180deg, var(--bg-2), var(--bg-1));
     }
     .site-header{ background: rgba(16,18,40,.65); border-bottom: 1px solid var(--border); }
-    .hero{
-      padding: 4.5rem 1.25rem 3rem;
-      display: grid; gap: 1.25rem;
-    }
+    .hero{ padding: 4.5rem 1.25rem 2.5rem; display: grid; gap: 1.1rem; }
     .hero h1{ font-size: clamp(2rem, 1.4rem + 3vw, 3rem); margin: .25rem 0 .5rem; }
     .hero .sub{ color: var(--muted); max-width: 60ch; }
     .cta{ display:flex; gap:.7rem; flex-wrap:wrap; margin-top: .8rem; }
@@ -46,6 +43,31 @@
     .tl-item::before{ content:""; position:absolute; left:0; top:.3rem; width:.75rem; height:.75rem; border-radius:50%;
                       background:linear-gradient(90deg,var(--brand),var(--brand-2)); box-shadow:0 0 0 3px #0b0f20; }
     .footer{ border-top:1px solid var(--border); margin-top:2rem; padding:1rem 0; color:var(--muted); }
+
+    /* Social buttons row */
+    .social-row{ display:flex; gap:.6rem; flex-wrap:wrap; }
+    .btn.link{ background: transparent; border:1px solid var(--border); }
+    .btn.link:hover{ border-color: transparent; background: linear-gradient(90deg,var(--brand),var(--brand-2)); }
+
+    /* Gallery grid */
+    .gallery{ display:grid; gap:.6rem; grid-template-columns: repeat(6, 1fr); }
+    @media (max-width: 1100px){ .gallery{ grid-template-columns: repeat(4, 1fr); } }
+    @media (max-width: 700px){ .gallery{ grid-template-columns: repeat(2, 1fr); } }
+    .shot{
+      position:relative; overflow:hidden; border-radius:.8rem;
+      background:#0a0e1b; border:1px solid var(--border);
+      aspect-ratio: 4 / 3; /* consistent tiles */
+    }
+    .shot img{
+      width:100%; height:100%; object-fit:cover; display:block;
+      transition: transform .35s ease;
+    }
+    .shot:hover img{ transform: scale(1.04); }
+    .shot .cap{
+      position:absolute; left:.5rem; bottom:.5rem; right:.5rem;
+      font-size:.85rem; color:#e9eef7; text-shadow:0 2px 10px rgba(0,0,0,.6);
+      opacity:.95;
+    }
   </style>
 </head>
 <body>
@@ -78,6 +100,12 @@
       <div class="cta">
         <a class="btn" href="/cv.html">View CV</a>
         <a class="btn ghost" href="/research.html">Research Statement</a>
+      </div>
+      <!-- Quick socials (now includes LinkedIn) -->
+      <div class="social-row" style="margin-top:.6rem">
+        <a class="btn link" href="https://www.linkedin.com/in/YOUR-LINKEDIN-HANDLE" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn link" href="https://instagram.com/YOUR_INSTAGRAM" target="_blank" rel="noopener">Instagram</a>
+        <a class="btn link" href="https://youtube.com/@YOUR_YOUTUBE" target="_blank" rel="noopener">YouTube</a>
       </div>
     </section>
 
@@ -130,16 +158,39 @@
       </div>
     </section>
 
-    <!-- Social teaser -->
-    <section class="section" aria-label="Connect">
-      <div class="card" style="display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap;">
-        <div>
-          <h2>Let’s connect</h2>
-          <p class="sub">Professional first — but I share work and life on Instagram and YouTube.</p>
-        </div>
-        <div class="cta">
-          <a class="btn" href="/socials.html">Instagram & YouTube</a>
-        </div>
+    <!-- Photography Gallery -->
+    <section class="section" aria-label="Photography">
+      <h2>Gallery</h2>
+      <p class="sub">A few favorites from recent shoots and travels.</p>
+      <div class="gallery">
+        <!-- Replace src paths with your images in /assets/gallery/ -->
+        <figure class="shot">
+          <img src="/assets/gallery/photo1.jpg" alt="Photo 1" loading="lazy">
+          <figcaption class="cap">Caption or location</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="/assets/gallery/photo2.jpg" alt="Photo 2" loading="lazy">
+          <figcaption class="cap">Caption or location</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="/assets/gallery/photo3.jpg" alt="Photo 3" loading="lazy">
+          <figcaption class="cap">Caption or location</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="/assets/gallery/photo4.jpg" alt="Photo 4" loading="lazy">
+          <figcaption class="cap">Caption or location</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="/assets/gallery/photo5.jpg" alt="Photo 5" loading="lazy">
+          <figcaption class="cap">Caption or location</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="/assets/gallery/photo6.jpg" alt="Photo 6" loading="lazy">
+          <figcaption class="cap">Caption or location</figcaption>
+        </figure>
+      </div>
+      <div class="cta" style="margin-top:.8rem;">
+        <a class="btn ghost" href="/socials.html">See more on Instagram & YouTube</a>
       </div>
     </section>
   </main>
