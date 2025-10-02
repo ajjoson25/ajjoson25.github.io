@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Anthony Joson — Portfolio</title>
-  <meta name="description" content="Research • CV • Skills • Socials" />
+  <title>Anthony Jacob R. Joson — Portfolio</title>
+  <meta name="description" content="Bioinformatics • Genomic Evolution • Genome Editing • Protein Dynamics" />
   <link rel="icon" href="/assets/logo.svg">
   <link rel="stylesheet" href="/style.css" />
   <!-- Open Graph -->
-  <meta property="og:title" content="Anthony Joson — Portfolio">
-  <meta property="og:description" content="Comparative genomics, CRISPR tooling, and data-driven biology.">
+  <meta property="og:title" content="Anthony Jacob R. Joson — Portfolio">
+  <meta property="og:description" content="Bioinformatician: genomic evolution, gene regulation, genome editing, protein dynamics.">
   <meta property="og:type" content="website">
   <style>
-    /* minimal overrides for clean portfolio vibe + gallery */
+    /* minimal page-specific overrides for clean portfolio layout */
     :root{
       --bg-1:#0f1226; --bg-2:#181a3a;
       --brand:#8b5cf6; --brand-2:#22d3ee;
@@ -20,43 +20,58 @@
       --panel:#0f1320; --border:#232a44;
     }
     body{
-      background: radial-gradient(1000px 600px at 80% -10%, rgba(34,211,238,.15), transparent 60%),
-                  radial-gradient(1000px 600px at 10% -10%, rgba(139,92,246,.18), transparent 60%),
-                  linear-gradient(180deg, var(--bg-2), var(--bg-1));
+      background:
+        radial-gradient(1000px 600px at 80% -10%, rgba(34,211,238,.15), transparent 60%),
+        radial-gradient(1000px 600px at 10% -10%, rgba(139,92,246,.18), transparent 60%),
+        linear-gradient(180deg, var(--bg-2), var(--bg-1));
     }
-    .site-header{ background: rgba(16,18,40,.65); border-bottom: 1px solid var(--border); }
-    .hero{ padding: 4.5rem 1.25rem 2.5rem; display: grid; gap: 1.1rem; }
-    .hero h1{ font-size: clamp(2rem, 1.4rem + 3vw, 3rem); margin: .25rem 0 .5rem; }
-    .hero .sub{ color: var(--muted); max-width: 60ch; }
-    .cta{ display:flex; gap:.7rem; flex-wrap:wrap; margin-top: .8rem; }
-    .btn{ background: linear-gradient(90deg,var(--brand),var(--brand-2)); }
-    .btn.ghost{ background: transparent; color: var(--text); border:1px solid var(--border); }
+    .site-header{ background: rgba(16,18,40,.65); border-bottom:1px solid var(--border); }
     .section{ margin-top: 2rem; }
-    .cards{ display:grid; gap:1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-    .card{ background: var(--panel); border:1px solid var(--border); border-radius:1rem; padding:1rem 1.25rem; }
-    .card h3{ margin:.25rem 0 .25rem; }
+    .card{ background: var(--panel); border:1px solid var(--border); border-radius:1rem; padding:1.25rem 1.5rem; }
     .pill{ display:inline-flex; align-items:center; gap:.4rem; font-size:.8rem; color:var(--muted);
            padding:.25rem .6rem; border:1px solid var(--border); border-radius:999px; }
-    .timeline{ position:relative; }
-    .timeline::before{ content:""; position:absolute; left:.5rem; top:.2rem; bottom:.2rem; width:2px; background:var(--border); }
-    .tl-item{ position:relative; padding-left:1.75rem; margin:.2rem 0 1rem; }
-    .tl-item::before{ content:""; position:absolute; left:0; top:.3rem; width:.75rem; height:.75rem; border-radius:50%;
-                      background:linear-gradient(90deg,var(--brand),var(--brand-2)); box-shadow:0 0 0 3px #0b0f20; }
-    .footer{ border-top:1px solid var(--border); margin-top:2rem; padding:1rem 0; color:var(--muted); }
+    .btn{ background: linear-gradient(90deg,var(--brand),var(--brand-2)); color:#fff; border:none; }
+    .btn.ghost{ background: transparent; color: var(--text); border:1px solid var(--border); }
+    .cta{ display:flex; gap:.7rem; flex-wrap:wrap; }
+    .muted{ color: var(--muted); }
 
-    /* Social buttons row */
-    .social-row{ display:flex; gap:.6rem; flex-wrap:wrap; }
-    .btn.link{ background: transparent; border:1px solid var(--border); }
-    .btn.link:hover{ border-color: transparent; background: linear-gradient(90deg,var(--brand),var(--brand-2)); }
+    /* HERO */
+    .hero{
+      display:grid; gap:1.5rem; align-items:center;
+      grid-template-columns: 1.25fr .75fr;
+      padding: 3rem 0 1.5rem;
+    }
+    @media (max-width: 900px){ .hero{ grid-template-columns: 1fr; } }
+    .hero h1{ font-size: clamp(2.2rem, 1.4rem + 4vw, 3.4rem); margin:.25rem 0 .5rem; line-height:1.1; }
+    .hero .sub{ color: var(--muted); max-width: 65ch; }
+    .pfp{
+      display:flex; align-items:center; justify-content:center;
+    }
+    .pfp .frame{
+      width: 260px; max-width: 70vw; aspect-ratio:1/1; border-radius: 50%;
+      overflow:hidden; border:1px solid var(--border);
+      box-shadow: 0 20px 60px rgba(0,0,0,.35);
+      background: #0b0f20;
+    }
+    .pfp img{ width:100%; height:100%; object-fit:cover; display:block; }
 
-    /* Gallery grid */
+    /* GRID / LISTS */
+    .cards{ display:grid; gap:1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .chips{ display:flex; flex-wrap:wrap; gap:.5rem; }
+    .chip{
+      display:inline-flex; align-items:center; gap:.35rem; font-size:.86rem;
+      border:1px solid var(--border); color:var(--text); border-radius:999px; padding:.35rem .6rem;
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+    }
+
+    /* GALLERY */
     .gallery{ display:grid; gap:.6rem; grid-template-columns: repeat(6, 1fr); }
     @media (max-width: 1100px){ .gallery{ grid-template-columns: repeat(4, 1fr); } }
     @media (max-width: 700px){ .gallery{ grid-template-columns: repeat(2, 1fr); } }
     .shot{
       position:relative; overflow:hidden; border-radius:.8rem;
       background:#0a0e1b; border:1px solid var(--border);
-      aspect-ratio: 4 / 3; /* consistent tiles */
+      aspect-ratio: 4 / 3;
     }
     .shot img{
       width:100%; height:100%; object-fit:cover; display:block;
@@ -89,79 +104,119 @@
   </header>
 
   <main class="container">
-    <!-- Hero -->
+    <!-- HERO -->
     <section class="hero">
-      <span class="pill">Comparative Genomics • CRISPR • Data Viz</span>
-      <h1>Hi, I’m <strong>Anthony</strong>. I build clean tools and clear stories around complex biology.</h1>
-      <p class="sub">
-        Focused on eight-species <em>Drosophila</em> analyses (RNA-seq, EVE, HyPhy) and a modular CRISPR HDR design tool.
-        I like shipping practical, well-documented workflows and visualizations.
-      </p>
-      <div class="cta">
-        <a class="btn" href="/cv.html">View CV</a>
-        <a class="btn ghost" href="/research.html">Research Statement</a>
+      <div>
+        <span class="pill">Bioinformatics • Genomic Evolution • Genome Editing</span>
+        <h1><strong>Anthony Jacob R. Joson</strong></h1>
+        <p class="sub">
+          I’m a bioinformatician interested in what influences the tempo and mode of gene and protein evolution,
+          how we can build practical tools for precise genome editing, and how proteins fold and change
+          as they carry out their functions. I like turning messy multi-omic data into clean, reproducible
+          analyses and intuitive tools—linking regulatory programs, sequence features, and structure to the
+          evolutionary stories they tell.
+        </p>
+        <div class="cta" style="margin-top:.9rem;">
+          <a class="btn" href="/cv.html">View CV</a>
+          <a class="btn ghost" href="/research.html">Research Statement</a>
+        </div>
       </div>
-      <!-- Quick socials (now includes LinkedIn) -->
-      <div class="social-row" style="margin-top:.6rem">
-        <a class="btn link" href="https://www.linkedin.com/in/YOUR-LINKEDIN-HANDLE" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn link" href="https://instagram.com/YOUR_INSTAGRAM" target="_blank" rel="noopener">Instagram</a>
-        <a class="btn link" href="https://youtube.com/@YOUR_YOUTUBE" target="_blank" rel="noopener">YouTube</a>
-      </div>
-    </section>
-
-    <!-- Featured Projects -->
-    <section class="section" aria-label="Featured Projects">
-      <h2>Featured projects</h2>
-      <div class="cards">
-        <article class="card">
-          <span class="pill">Python • Flask</span>
-          <h3>CRISPR One-HDR-Ready</h3>
-          <p>End-to-end HDR arm builder: sgRNA scoring, orientation logic, arm extraction, and primer outputs.</p>
-          <a class="btn ghost" href="/research.html#crispr">Details</a>
-        </article>
-        <article class="card">
-          <span class="pill">R • Stats</span>
-          <h3>Drosophila RNA-seq GLMs</h3>
-          <p>Sex-bias, tissue specificity (τ), and expression as predictors of dN/dS across orthologs.</p>
-          <a class="btn ghost" href="/research.html#glms">Details</a>
-        </article>
-        <article class="card">
-          <span class="pill">HyPhy • EVE</span>
-          <h3>Selection & Expression Models</h3>
-          <p>aBSREL/BUSTED and hierarchical EVE fits to link regulation patterns to evolutionary outcomes.</p>
-          <a class="btn ghost" href="/research.html#eve-hyphy">Details</a>
-        </article>
-      </div>
-    </section>
-
-    <!-- Experience snapshot -->
-    <section class="section" aria-label="Experience">
-      <h2>Experience</h2>
-      <div class="card">
-        <div class="timeline">
-          <div class="tl-item">
-            <h3>Comparative Genomics Research — Perez Lab</h3>
-            <p class="sub">Temple University · 2024—present</p>
-            <p>Cross-species RNA-seq integration; GLMs; EVE modeling; HyPhy selection scans.</p>
-          </div>
-          <div class="tl-item">
-            <h3>CRISPR HDR Web Tool</h3>
-            <p class="sub">Flask/Python · 2024—present</p>
-            <p>Modular pipelines (N- & C-terminal), scoring & arm logic, progress feedback, and outputs.</p>
-          </div>
-          <div class="tl-item">
-            <h3>Data Visualization & Reproducibility</h3>
-            <p class="sub">R/Python · ongoing</p>
-            <p>PCA/UMAP, reportable figures, and tidy, documented analysis workflows.</p>
-          </div>
+      <div class="pfp">
+        <!-- Replace with your headshot path -->
+        <div class="frame">
+          <img src="/assets/profile.jpg" alt="Portrait of Anthony Joson">
         </div>
       </div>
     </section>
 
-    <!-- Photography Gallery -->
+    <!-- Education -->
+    <section class="section">
+      <div class="card">
+        <h2>Education</h2>
+        <p><strong>Temple University</strong>, Philadelphia, PA</p>
+        <ul class="muted" style="padding-left:1.1rem; margin:.4rem 0;">
+          <li><strong>M.S.</strong> Biology — <em>in progress</em></li>
+          <li><strong>B.S.</strong> Biochemistry</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Notable Projects -->
+    <section class="section">
+      <h2>Notable projects</h2>
+      <div class="cards">
+        <article class="card">
+          <span class="pill">Python • Flask • HDR</span>
+          <h3>One-HDR Ready</h3>
+          <p class="muted">
+            An end-to-end tool for homology-directed repair design: sgRNA selection and scoring, orientation checks,
+            donor arm extraction, primer outputs, and progress feedback—built to streamline practical editing workflows.
+          </p>
+          <div class="cta">
+            <a class="btn ghost" href="https://github.com/operezlab/One-HDR-Ready-command-line-tool" target="_blank" rel="noopener">View on GitHub</a>
+          </div>
+        </article>
+        <article class="card">
+          <span class="pill">Genomics • Sonification</span>
+          <h3>Genomic Music</h3>
+          <p class="muted">
+            Translating genomic alignments into musical structure to surface patterns in conservation, variation,
+            and motif context. Demo link coming soon once hosted.
+          </p>
+          <div class="cta">
+            <a class="btn ghost" href="#" onclick="return false;">Link coming soon</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Research Interests -->
+    <section class="section">
+      <h2>Research interests</h2>
+      <div class="chips" aria-label="Research interests">
+        <span class="chip">Genomic Evolution</span>
+        <span class="chip">Gene Regulation</span>
+        <span class="chip">Genome Editing</span>
+        <span class="chip">Protein Dynamics</span>
+        <span class="chip">DNA Repair Mechanisms</span>
+      </div>
+    </section>
+
+    <!-- General Interests -->
+    <section class="section">
+      <h2>General interests</h2>
+      <div class="chips" aria-label="General interests">
+        <span class="chip">Volleyball</span>
+        <span class="chip">Pickleball</span>
+        <span class="chip">Cooking</span>
+        <span class="chip">Playing Instruments</span>
+        <span class="chip">Traveling</span>
+        <span class="chip">Computer Building</span>
+        <span class="chip">Photography</span>
+        <span class="chip">Rock Climbing & Bouldering</span>
+      </div>
+    </section>
+    
+    <!-- What I'm Listening To -->
+    <section class="section">
+      <h2>What I’m listening to</h2>
+      <div class="card" style="text-align:center;">
+        <p class="muted">Right now I’m vibing to my Spotify Daylist 🎧</p>
+        <!-- Temporary placeholder album/playlist cover -->
+        <div style="margin:1rem auto; max-width:280px;">
+          <img src="/assets/spotify-placeholder.jpg" alt="Spotify playlist cover" style="width:100%; border-radius:.8rem; border:1px solid var(--border);">
+        </div>
+        <p class="muted">Soon this will update automatically with whatever Spotify sets for my Daylist!</p>
+        <div class="cta" style="justify-content:center; margin-top:.8rem;">
+          <a class="btn ghost" href="https://open.spotify.com/" target="_blank" rel="noopener">Listen on Spotify</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
     <section class="section" aria-label="Photography">
       <h2>Gallery</h2>
-      <p class="sub">A few favorites from recent shoots and travels.</p>
+      <p class="muted">A few favorites from recent shoots and travels.</p>
       <div class="gallery">
         <!-- Replace src paths with your images in /assets/gallery/ -->
         <figure class="shot">
