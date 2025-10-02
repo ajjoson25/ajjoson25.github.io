@@ -3,20 +3,57 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Home — Anthony Joson</title>
-  <meta name="description" content="Portfolio site for research, CV, skills, and socials." />
+  <title>Anthony Joson — Portfolio</title>
+  <meta name="description" content="Research • CV • Skills • Socials" />
   <link rel="icon" href="/assets/logo.svg">
   <link rel="stylesheet" href="/style.css" />
+  <!-- Open Graph -->
   <meta property="og:title" content="Anthony Joson — Portfolio">
-  <meta property="og:description" content="Research • CV • Skills • Socials">
+  <meta property="og:description" content="Comparative genomics, CRISPR tooling, and data-driven biology.">
   <meta property="og:type" content="website">
+  <style>
+    /* minimal overrides to get the sleek, simple portfolio vibe */
+    :root{
+      --bg-1:#0f1226; --bg-2:#181a3a;
+      --brand:#8b5cf6; --brand-2:#22d3ee;
+      --text:#e7ecf5; --muted:#a6b0bb;
+      --panel:#0f1320; --border:#232a44;
+    }
+    body{
+      background: radial-gradient(1000px 600px at 80% -10%, rgba(34,211,238,.15), transparent 60%),
+                  radial-gradient(1000px 600px at 10% -10%, rgba(139,92,246,.18), transparent 60%),
+                  linear-gradient(180deg, var(--bg-2), var(--bg-1));
+    }
+    .site-header{ background: rgba(16,18,40,.65); border-bottom: 1px solid var(--border); }
+    .hero{
+      padding: 4.5rem 1.25rem 3rem;
+      display: grid; gap: 1.25rem;
+    }
+    .hero h1{ font-size: clamp(2rem, 1.4rem + 3vw, 3rem); margin: .25rem 0 .5rem; }
+    .hero .sub{ color: var(--muted); max-width: 60ch; }
+    .cta{ display:flex; gap:.7rem; flex-wrap:wrap; margin-top: .8rem; }
+    .btn{ background: linear-gradient(90deg,var(--brand),var(--brand-2)); }
+    .btn.ghost{ background: transparent; color: var(--text); border:1px solid var(--border); }
+    .section{ margin-top: 2rem; }
+    .cards{ display:grid; gap:1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .card{ background: var(--panel); border:1px solid var(--border); border-radius:1rem; padding:1rem 1.25rem; }
+    .card h3{ margin:.25rem 0 .25rem; }
+    .pill{ display:inline-flex; align-items:center; gap:.4rem; font-size:.8rem; color:var(--muted);
+           padding:.25rem .6rem; border:1px solid var(--border); border-radius:999px; }
+    .timeline{ position:relative; }
+    .timeline::before{ content:""; position:absolute; left:.5rem; top:.2rem; bottom:.2rem; width:2px; background:var(--border); }
+    .tl-item{ position:relative; padding-left:1.75rem; margin:.2rem 0 1rem; }
+    .tl-item::before{ content:""; position:absolute; left:0; top:.3rem; width:.75rem; height:.75rem; border-radius:50%;
+                      background:linear-gradient(90deg,var(--brand),var(--brand-2)); box-shadow:0 0 0 3px #0b0f20; }
+    .footer{ border-top:1px solid var(--border); margin-top:2rem; padding:1rem 0; color:var(--muted); }
+  </style>
 </head>
 <body>
   <!-- Header / Nav -->
   <header class="site-header">
     <div class="container">
       <a class="brand" href="/" aria-label="Go to homepage">
-        <img class="logo" src="/assets/logo.svg" alt="Logo">
+        <img class="logo" src="/assets/logo.svg" alt="Logo" width="32" height="32">
         <span class="title">Anthony Joson</span>
       </a>
       <nav class="nav" aria-label="Primary">
@@ -30,62 +67,83 @@
   </header>
 
   <main class="container">
-    <!-- Cosmic hero -->
-    <section class="theme-space panel" aria-label="Intro">
-      <!-- decorative layers -->
-      <div class="planet" aria-hidden="true"></div>
-      <div class="stars" aria-hidden="true"></div>
-      <div class="stars2" aria-hidden="true"></div>
-      <div class="cloud" aria-hidden="true"></div>
-      <div class="cloud c2" aria-hidden="true"></div>
-
-      <!-- content -->
-      <div style="position:relative; z-index:1;">
-        <div class="badge">Professional • Research • Creative</div>
-        <h1>Hello — I’m <strong>Anthony Joson</strong></h1>
-        <p class="small">
-          Undergraduate researcher focused on comparative genomics, CRISPR tooling, and data-driven biology.
-          I build clean tools and clear stories around complex datasets.
-        </p>
-        <p style="display:flex; gap:.6rem; flex-wrap:wrap;">
-          <a class="btn" href="/cv.html">View CV</a>
-          <a class="btn" href="/research.html">Research Statement</a>
-        </p>
+    <!-- Hero -->
+    <section class="hero">
+      <span class="pill">Comparative Genomics • CRISPR • Data Viz</span>
+      <h1>Hi, I’m <strong>Anthony</strong>. I build clean tools and clear stories around complex biology.</h1>
+      <p class="sub">
+        Focused on eight-species <em>Drosophila</em> analyses (RNA-seq, EVE, HyPhy) and a modular CRISPR HDR design tool.
+        I like shipping practical, well-documented workflows and visualizations.
+      </p>
+      <div class="cta">
+        <a class="btn" href="/cv.html">View CV</a>
+        <a class="btn ghost" href="/research.html">Research Statement</a>
       </div>
     </section>
 
-    <!-- Feature cards -->
-    <section class="grid cols-3" style="margin-top:1rem;" aria-label="Highlights">
-      <article class="panel">
-        <h2>Research</h2>
-        <p>Comparative RNA-seq across eight <em>Drosophila</em> species; modeling drivers of molecular evolution with EVE and HyPhy.</p>
-        <a class="btn" href="/research.html" aria-label="Read more about research">Read more</a>
-      </article>
-
-      <article class="panel">
-        <h2>CV</h2>
-        <p>Education, experience, publications, and talks in a printable layout.</p>
-        <a class="btn" href="/cv.html" aria-label="Open CV page">Open CV</a>
-      </article>
-
-      <article class="panel">
-        <h2>Skills</h2>
-        <p>Bioinformatics pipelines, statistical modeling, and reproducible analysis in R/Python.</p>
-        <a class="btn" href="/skills.html" aria-label="View skills">View skills</a>
-      </article>
+    <!-- Featured Projects -->
+    <section class="section" aria-label="Featured Projects">
+      <h2>Featured projects</h2>
+      <div class="cards">
+        <article class="card">
+          <span class="pill">Python • Flask</span>
+          <h3>CRISPR One-HDR-Ready</h3>
+          <p>End-to-end HDR arm builder: sgRNA scoring, orientation logic, arm extraction, and primer outputs.</p>
+          <a class="btn ghost" href="/research.html#crispr">Details</a>
+        </article>
+        <article class="card">
+          <span class="pill">R • Stats</span>
+          <h3>Drosophila RNA-seq GLMs</h3>
+          <p>Sex-bias, tissue specificity (τ), and expression as predictors of dN/dS across orthologs.</p>
+          <a class="btn ghost" href="/research.html#glms">Details</a>
+        </article>
+        <article class="card">
+          <span class="pill">HyPhy • EVE</span>
+          <h3>Selection & Expression Models</h3>
+          <p>aBSREL/BUSTED and hierarchical EVE fits to link regulation patterns to evolutionary outcomes.</p>
+          <a class="btn ghost" href="/research.html#eve-hyphy">Details</a>
+        </article>
+      </div>
     </section>
 
-    <!-- Optional: quick contact / socials teaser -->
-    <section class="panel" style="margin-top:1rem;">
-      <h2>Let’s connect</h2>
-      <p class="small">Professional first, but you can also find me here:</p>
-      <p style="display:flex; gap:.6rem; flex-wrap:wrap;">
-        <a class="btn" href="/socials.html">Instagram & YouTube</a>
-      </p>
+    <!-- Experience snapshot -->
+    <section class="section" aria-label="Experience">
+      <h2>Experience</h2>
+      <div class="card">
+        <div class="timeline">
+          <div class="tl-item">
+            <h3>Comparative Genomics Research — Perez Lab</h3>
+            <p class="sub">Temple University · 2024—present</p>
+            <p>Cross-species RNA-seq integration; GLMs; EVE modeling; HyPhy selection scans.</p>
+          </div>
+          <div class="tl-item">
+            <h3>CRISPR HDR Web Tool</h3>
+            <p class="sub">Flask/Python · 2024—present</p>
+            <p>Modular pipelines (N- & C-terminal), scoring & arm logic, progress feedback, and outputs.</p>
+          </div>
+          <div class="tl-item">
+            <h3>Data Visualization & Reproducibility</h3>
+            <p class="sub">R/Python · ongoing</p>
+            <p>PCA/UMAP, reportable figures, and tidy, documented analysis workflows.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social teaser -->
+    <section class="section" aria-label="Connect">
+      <div class="card" style="display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap;">
+        <div>
+          <h2>Let’s connect</h2>
+          <p class="sub">Professional first — but I share work and life on Instagram and YouTube.</p>
+        </div>
+        <div class="cta">
+          <a class="btn" href="/socials.html">Instagram & YouTube</a>
+        </div>
+      </div>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container">© <span id="year"></span> Anthony Joson • Built on GitHub Pages</div>
   </footer>
