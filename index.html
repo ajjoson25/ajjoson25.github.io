@@ -1,32 +1,97 @@
-<!doctype html><html lang="en"><head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Home — Anthony Joson</title><meta name="description" content="Portfolio site for research, CV, skills, and socials."/>
-<link rel="stylesheet" href="/style.css"/></head><body>
-<header class="site-header"><div class="container">
-    <a class="brand" href="/"><img class="logo" src="/assets/logo.svg" alt="Logo"><span class="title">Anthony Joson</span></a>
-    <nav class="nav"><a class="active" href="/index.html">Home</a><a class="" href="/research.html">Research</a><a class="" href="/cv.html">CV</a><a class="" href="/skills.html">Skills</a><a class="" href="/socials.html">Socials</a></nav></div></header>
-<main class="container">
-<section class="hero">
-  <div class="panel">
-    <div class="badge">Professional • Research • Creative</div>
-    <h1>Hello — I’m <strong>Anthony Joson</strong></h1>
-    <p class="small">Undergraduate researcher focused on comparative genomics, CRISPR tooling, and data‑driven biology. I build clean tools and clear stories around complex datasets.</p>
-    <p><a class="btn" href="/cv.html">View CV</a> <a class="btn" href="/research.html">Research Statement</a></p>
-  </div>
-  <div class="panel">
-    <h2>Highlights</h2>
-    <ul class="list">
-      <li>Drosophila comparative RNA‑seq & evolutionary models (EVE, HyPhy)</li>
-      <li>CRISPR HDR design tool — modularized pipelines (Flask/Python)</li>
-      <li>Data visualization & reproducible analysis in R/Python</li>
-    </ul>
-  </div>
-</section>
-<section class="grid cols-3" style="margin-top:1rem;">
-  <div class="panel"><h3>Research</h3><p>Short overview of interests and recent work.</p><a class="btn" href="/research.html">Read more</a></div>
-  <div class="panel"><h3>CV</h3><p>Experience, education, publications, talks.</p><a class="btn" href="/cv.html">Open CV</a></div>
-  <div class="panel"><h3>Skills</h3><p>Tech stack across bioinformatics, stats, and web tooling.</p><a class="btn" href="/skills.html">View skills</a></div>
-</section>
-</main>
-<footer class="footer"><div class="container">© <span id="year"></span> Anthony Joson • Built on GitHub Pages</div></footer><script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-</body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home — Anthony Joson</title>
+  <meta name="description" content="Portfolio site for research, CV, skills, and socials." />
+  <link rel="icon" href="/assets/logo.svg">
+  <link rel="stylesheet" href="/style.css" />
+  <meta property="og:title" content="Anthony Joson — Portfolio">
+  <meta property="og:description" content="Research • CV • Skills • Socials">
+  <meta property="og:type" content="website">
+</head>
+<body>
+  <!-- Header / Nav -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/" aria-label="Go to homepage">
+        <img class="logo" src="/assets/logo.svg" alt="Logo">
+        <span class="title">Anthony Joson</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a class="active" href="/">Home</a>
+        <a href="/research.html">Research</a>
+        <a href="/cv.html">CV</a>
+        <a href="/skills.html">Skills</a>
+        <a href="/socials.html">Socials</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Cosmic hero -->
+    <section class="theme-space panel" aria-label="Intro">
+      <!-- decorative layers -->
+      <div class="planet" aria-hidden="true"></div>
+      <div class="stars" aria-hidden="true"></div>
+      <div class="stars2" aria-hidden="true"></div>
+      <div class="cloud" aria-hidden="true"></div>
+      <div class="cloud c2" aria-hidden="true"></div>
+
+      <!-- content -->
+      <div style="position:relative; z-index:1;">
+        <div class="badge">Professional • Research • Creative</div>
+        <h1>Hello — I’m <strong>Anthony Joson</strong></h1>
+        <p class="small">
+          Undergraduate researcher focused on comparative genomics, CRISPR tooling, and data-driven biology.
+          I build clean tools and clear stories around complex datasets.
+        </p>
+        <p style="display:flex; gap:.6rem; flex-wrap:wrap;">
+          <a class="btn" href="/cv.html">View CV</a>
+          <a class="btn" href="/research.html">Research Statement</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Feature cards -->
+    <section class="grid cols-3" style="margin-top:1rem;" aria-label="Highlights">
+      <article class="panel">
+        <h2>Research</h2>
+        <p>Comparative RNA-seq across eight <em>Drosophila</em> species; modeling drivers of molecular evolution with EVE and HyPhy.</p>
+        <a class="btn" href="/research.html" aria-label="Read more about research">Read more</a>
+      </article>
+
+      <article class="panel">
+        <h2>CV</h2>
+        <p>Education, experience, publications, and talks in a printable layout.</p>
+        <a class="btn" href="/cv.html" aria-label="Open CV page">Open CV</a>
+      </article>
+
+      <article class="panel">
+        <h2>Skills</h2>
+        <p>Bioinformatics pipelines, statistical modeling, and reproducible analysis in R/Python.</p>
+        <a class="btn" href="/skills.html" aria-label="View skills">View skills</a>
+      </article>
+    </section>
+
+    <!-- Optional: quick contact / socials teaser -->
+    <section class="panel" style="margin-top:1rem;">
+      <h2>Let’s connect</h2>
+      <p class="small">Professional first, but you can also find me here:</p>
+      <p style="display:flex; gap:.6rem; flex-wrap:wrap;">
+        <a class="btn" href="/socials.html">Instagram & YouTube</a>
+      </p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">© <span id="year"></span> Anthony Joson • Built on GitHub Pages</div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
