@@ -5,117 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Anthony Jacob R. Joson — Portfolio</title>
   <meta name="description" content="Bioinformatics • Genomic Evolution • Genome Editing • Protein Dynamics" />
-  <link rel="icon" href="/assets/logo.svg">
+  <link rel="icon" href="/assets/logo.svg" />
   <link rel="stylesheet" href="/style.css" />
-  <!-- Open Graph -->
-  <meta property="og:title" content="Anthony Jacob R. Joson — Portfolio">
-  <meta property="og:description" content="Bioinformatician: genomic evolution, gene regulation, genome editing, protein dynamics.">
-  <meta property="og:type" content="website">
-  <style>
-    /* minimal page-specific overrides for clean portfolio layout */
-    :root{
-      --bg-1:#0f1226; --bg-2:#181a3a;
-      --brand:#8b5cf6; --brand-2:#22d3ee;
-      --text:#e7ecf5; --muted:#a6b0bb;
-      --panel:#0f1320; --border:#232a44;
-    }
-    body{
-      background:
-        radial-gradient(1000px 600px at 80% -10%, rgba(34,211,238,.15), transparent 60%),
-        radial-gradient(1000px 600px at 10% -10%, rgba(139,92,246,.18), transparent 60%),
-        linear-gradient(180deg, var(--bg-2), var(--bg-1));
-    }
-    .site-header{ background: rgba(16,18,40,.65); border-bottom:1px solid var(--border); }
-    .section{ margin-top: 2rem; }
-    .card{ background: var(--panel); border:1px solid var(--border); border-radius:1rem; padding:1.25rem 1.5rem; }
-    .pill{ display:inline-flex; align-items:center; gap:.4rem; font-size:.8rem; color:var(--muted);
-           padding:.25rem .6rem; border:1px solid var(--border); border-radius:999px; }
-    .btn{ background: linear-gradient(90deg,var(--brand),var(--brand-2)); color:#fff; border:none; }
-    .btn.ghost{ background: transparent; color: var(--text); border:1px solid var(--border); }
-    .cta{ display:flex; gap:.7rem; flex-wrap:wrap; }
-    .muted{ color: var(--muted); }
-
-    /* HERO */
-    .hero{
-      display:grid; gap:1.5rem; align-items:center;
-      grid-template-columns: 1.25fr .75fr;
-      padding: 3rem 0 1.5rem;
-    }
-    @media (max-width: 900px){ .hero{ grid-template-columns: 1fr; } }
-    .hero h1{ font-size: clamp(2.2rem, 1.4rem + 4vw, 3.4rem); margin:.25rem 0 .5rem; line-height:1.1; }
-    .hero .sub{ color: var(--muted); max-width: 65ch; }
-    .pfp{
-      display:flex; align-items:center; justify-content:center;
-    }
-    .pfp .frame{
-      width: 260px; max-width: 70vw; aspect-ratio:1/1; border-radius: 50%;
-      overflow:hidden; border:1px solid var(--border);
-      box-shadow: 0 20px 60px rgba(0,0,0,.35);
-      background: #0b0f20;
-    }
-    .pfp img{ width:100%; height:100%; object-fit:cover; display:block; }
-
-    /* GRID / LISTS */
-    .cards{ display:grid; gap:1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-    .chips{ display:flex; flex-wrap:wrap; gap:.5rem; }
-    .chip{
-      display:inline-flex; align-items:center; gap:.35rem; font-size:.86rem;
-      border:1px solid var(--border); color:var(--text); border-radius:999px; padding:.35rem .6rem;
-      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
-    }
-
-    /* GALLERY */
-    .gallery{ display:grid; gap:.6rem; grid-template-columns: repeat(6, 1fr); }
-    @media (max-width: 1100px){ .gallery{ grid-template-columns: repeat(4, 1fr); } }
-    @media (max-width: 700px){ .gallery{ grid-template-columns: repeat(2, 1fr); } }
-    .shot{
-      position:relative; overflow:hidden; border-radius:.8rem;
-      background:#0a0e1b; border:1px solid var(--border);
-      aspect-ratio: 4 / 3;
-    }
-    .shot img{
-      width:100%; height:100%; object-fit:cover; display:block;
-      transition: transform .35s ease;
-    }
-    .shot:hover img{ transform: scale(1.04); }
-    .shot .cap{
-      position:absolute; left:.5rem; bottom:.5rem; right:.5rem;
-      font-size:.85rem; color:#e9eef7; text-shadow:0 2px 10px rgba(0,0,0,.6);
-      opacity:.95;
-    }
-  </style>
+  <meta property="og:title" content="Anthony Jacob R. Joson — Portfolio" />
+  <meta property="og:description" content="Bioinformatician: genomic evolution, gene regulation, genome editing, protein dynamics." />
+  <meta property="og:type" content="website" />
 </head>
 <body>
-  <!-- Header / Nav -->
+  <!-- Header -->
   <header class="site-header">
-  <div class="container">
-    <a class="brand" href="/">
-      <img class="logo" src="/assets/logo.svg" alt="Logo">
-      <span class="title">Anthony Joson</span>
-    </a>
-    <nav class="nav" aria-label="Primary">
-      <a class="active" href="/">Home</a>
-      <a href="/research.html">Research</a>
-      <a href="/cv.html">CV</a>
-      <a href="/skills.html">Skills</a>
-      <a href="/socials.html">Socials</a>
-    </nav>
-  </div>
-</header>
-
+    <div class="container">
+      <a class="brand" href="/">
+        <img class="logo" src="/assets/logo.svg" alt="Logo" />
+        <span class="title">Anthony Joson</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a class="active" href="/">Home</a>
+        <a href="/research.html">Research</a>
+        <a href="/cv.html">CV</a>
+        <a href="/skills.html">Skills</a>
+        <a href="/socials.html">Socials</a>
+      </nav>
+    </div>
+  </header>
 
   <main class="container">
-    <!-- HERO -->
+    <!-- Hero -->
     <section class="hero">
       <div>
         <span class="pill">Bioinformatics • Genomic Evolution • Genome Editing</span>
         <h1><strong>Anthony Jacob R. Joson</strong></h1>
         <p class="sub">
           I’m a bioinformatician interested in what influences the tempo and mode of gene and protein evolution,
-          how we can build practical tools for precise genome editing, and how proteins fold and change
-          as they carry out their functions. I like turning messy multi-omic data into clean, reproducible
-          analyses and intuitive tools—linking regulatory programs, sequence features, and structure to the
-          evolutionary stories they tell.
+          how we can build practical tools for precise genome editing, and how proteins fold and change as they
+          carry out their functions. I like turning messy multi-omic data into clean, reproducible analyses and
+          intuitive tools—linking regulatory programs, sequence features, and structure to the evolutionary stories
+          they tell.
         </p>
         <div class="cta" style="margin-top:.9rem;">
           <a class="btn" href="/cv.html">View CV</a>
@@ -123,9 +48,9 @@
         </div>
       </div>
       <div class="pfp">
-        <!-- Replace with your headshot path -->
         <div class="frame">
-          <img src="/assets/profile.jpg" alt="Portrait of Anthony Joson">
+          <!-- Replace with your headshot -->
+          <img src="/assets/profile.jpg" alt="Portrait of Anthony Joson" />
         </div>
       </div>
     </section>
@@ -150,7 +75,7 @@
           <span class="pill">Python • Flask • HDR</span>
           <h3>One-HDR Ready</h3>
           <p class="muted">
-            An end-to-end tool for homology-directed repair design: sgRNA selection and scoring, orientation checks,
+            End-to-end tool for homology-directed repair design: sgRNA selection and scoring, orientation checks,
             donor arm extraction, primer outputs, and progress feedback—built to streamline practical editing workflows.
           </p>
           <div class="cta">
@@ -197,15 +122,14 @@
         <span class="chip">Rock Climbing & Bouldering</span>
       </div>
     </section>
-    
+
     <!-- What I'm Listening To -->
     <section class="section">
       <h2>What I’m listening to</h2>
       <div class="card" style="text-align:center;">
         <p class="muted">Right now I’m vibing to my Spotify Daylist 🎧</p>
-        <!-- Temporary placeholder album/playlist cover -->
         <div style="margin:1rem auto; max-width:280px;">
-          <img src="/assets/spotify-placeholder.jpg" alt="Spotify playlist cover" style="width:100%; border-radius:.8rem; border:1px solid var(--border);">
+          <img src="/assets/spotify-placeholder.jpg" alt="Spotify playlist cover" style="width:100%; border-radius:.8rem; border:1px solid var(--border);" />
         </div>
         <p class="muted">Soon this will update automatically with whatever Spotify sets for my Daylist!</p>
         <div class="cta" style="justify-content:center; margin-top:.8rem;">
@@ -219,29 +143,28 @@
       <h2>Gallery</h2>
       <p class="muted">A few favorites from recent shoots and travels.</p>
       <div class="gallery">
-        <!-- Replace src paths with your images in /assets/gallery/ -->
         <figure class="shot">
-          <img src="/assets/gallery/photo1.jpg" alt="Photo 1" loading="lazy">
+          <img src="/assets/gallery/photo1.jpg" alt="Photo 1" loading="lazy" />
           <figcaption class="cap">Caption or location</figcaption>
         </figure>
         <figure class="shot">
-          <img src="/assets/gallery/photo2.jpg" alt="Photo 2" loading="lazy">
+          <img src="/assets/gallery/photo2.jpg" alt="Photo 2" loading="lazy" />
           <figcaption class="cap">Caption or location</figcaption>
         </figure>
         <figure class="shot">
-          <img src="/assets/gallery/photo3.jpg" alt="Photo 3" loading="lazy">
+          <img src="/assets/gallery/photo3.jpg" alt="Photo 3" loading="lazy" />
           <figcaption class="cap">Caption or location</figcaption>
         </figure>
         <figure class="shot">
-          <img src="/assets/gallery/photo4.jpg" alt="Photo 4" loading="lazy">
+          <img src="/assets/gallery/photo4.jpg" alt="Photo 4" loading="lazy" />
           <figcaption class="cap">Caption or location</figcaption>
         </figure>
         <figure class="shot">
-          <img src="/assets/gallery/photo5.jpg" alt="Photo 5" loading="lazy">
+          <img src="/assets/gallery/photo5.jpg" alt="Photo 5" loading="lazy" />
           <figcaption class="cap">Caption or location</figcaption>
         </figure>
         <figure class="shot">
-          <img src="/assets/gallery/photo6.jpg" alt="Photo 6" loading="lazy">
+          <img src="/assets/gallery/photo6.jpg" alt="Photo 6" loading="lazy" />
           <figcaption class="cap">Caption or location</figcaption>
         </figure>
       </div>
